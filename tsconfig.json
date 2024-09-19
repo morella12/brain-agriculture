@@ -1,17 +1,22 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "strict": true,
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["node_modules/*", "src/types/*"]
+    },
+    "target": "es2021",
+    "module": "commonjs",
+    "strict": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
     "rootDir": "./src",
     "resolveJsonModule": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*", "src/data-source.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"],
 }

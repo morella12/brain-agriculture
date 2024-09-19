@@ -1,15 +1,16 @@
+import 'reflect-metadata';
 import { DataSource } from 'typeorm';
+import { config } from 'dotenv';
+import { Producer } from './entity/producers.entity';
+
+config();
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
-  host: process.env.URL,
-  port: 5432,
-  username: process.env.USER,
-  password: process.env.PASSWORD,
-  database: process.env.DATABASE,
+  url: process.env.URL_DB,
   synchronize: false,
-  logging: false,
-  entities: ['src/entity/**/*.ts'],
+  logging: true,
+  entities: [Producer],
   migrations: ['src/migration/**/*.ts'],
   subscribers: ['src/subscriber/**/*.ts'],
 });
