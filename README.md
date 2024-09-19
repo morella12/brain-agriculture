@@ -6,7 +6,6 @@
 
 ## Requisitos
 * Node.js v14+ e npm v6+
-* MongoDB
 
 ## Configuração e Execução do Backend
 * Clonando o repositpotório
@@ -53,7 +52,6 @@ yarn test
 
 ## Requirements
 * Node.js v14+ and npm v6+
-* MongoDB
 
 ## Backend Setup and Execution
 
@@ -87,4 +85,71 @@ npm test
 or
 ```bash
 yarn test
+```
+
+# API Endpoints
+
+### GetProducers (GET)
+
+- **Endpoint**: `http://localhost:3000/api/producers`
+- **Método**: `GET`
+
+#### Exemplo de Request
+```bash
+GET http://localhost:3000/api/producers
+```
+
+### PostProducer (POST)
+
+- **Endpoint**: `http://localhost:3000/api/producers`
+- **Método**: `POST`
+
+#### Exemplo de Request
+```bash
+POST http://localhost:3000/api/producers
+```
+```bash
+{
+  "documentId": "276.510.910-94",
+  "nameProducer": "John Doe",
+  "nameFarm": "Fazenda Sol Nascente",
+  "city": "Cidade 1",
+  "state": "MG",
+  "totalArea": 100.5,
+  "arableArea": 60.0,
+  "vegetationArea": 40.5,
+  "cultivatedCrops": "Soja"
+}
+```
+
+### DeleteProducer (DELETE)
+
+- **Endpoint**: `http://localhost:3000/api/producers/:id`
+- **Método**: `DELETE`
+
+#### Exemplo de Request
+```bash
+DELETE http://localhost:3000/api/producers/ad5de091-8f9b-4adc-b4ed-d1b9ee7acbde
+```
+### EditProducer (PUT)
+
+- **Endpoint**: `http://localhost:3000/api/producers/:id`
+- **Método**: `PUT`
+
+#### Exemplo de Request
+```bash
+PUT http://localhost:3000/api/producers/fbac3dda-834c-4e30-a0cd-f08b4df5332a
+```
+```bash
+{
+  "documentId": "20.619.660/0001-62",
+  "nameProducer": "Lucas Silva",
+  "nameFarm": "Fazenda Vale Verde",
+  "city": "Cidade 8",
+  "state": "SC",
+  "totalArea": 140.0,
+  "arableArea": 90.0,
+  "vegetationArea": 50.0,
+  "cultivatedCrops": ["Café"]
+}
 ```
